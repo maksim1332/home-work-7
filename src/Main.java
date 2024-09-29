@@ -54,7 +54,7 @@ public class Main {
 //        for (; total < 12_000_000; i++) {
 //            total = total + total / 100 * 7;
 //            total = total + salary;
-//            System.out.println("Месяц " + i + " " + total);
+//   /         System.out.println("Месяц " + i + " " + total);
         //task 5
         System.out.println("Task 5");
         int salary1 = 15000;
