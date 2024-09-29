@@ -2,12 +2,17 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
         //task 1
-        System.out.println("Task 7");
+        System.out.println("Task 1");
         int sum = 15000;
-        int deposit = 0;
-        while (deposit <= 2_459_000) {
-            deposit = deposit + sum;
-            System.out.println(deposit);
+        int depositSum = 2_459_000;
+        double deposit = 0;
+        double procent = 1.01;
+        int month = 0;
+        while (deposit < depositSum) {
+            deposit += sum;
+            deposit = deposit * procent;
+            month++;
+            System.out.printf("Месяц %d , сумма накоплений равна %2f рублей\n", month, deposit);
         }
         //task 2
         System.out.println("Task 2");
@@ -34,14 +39,22 @@ public class Main {
         }
         //task 4
         System.out.println("Task 4");
-        int salary = 15000;
-        int total = 0;
+        double salary = 15_000;
+        double total = 0;
+        double procent1 = 0.07;
         int i = 0;
         for (; total < 12_000_000; i++) {
-            total = total + total / 100 * 7;
+            total = total + salary * procent1;
             total = total + salary;
-            System.out.println("Месяц " + i + " " + total);
+            System.out.printf("Месяц %d " + " %2f\n", i, total);
         }
+//        int salary = 15000;
+//        int total = 0;
+//        int i = 0;
+//        for (; total < 12_000_000; i++) {
+//            total = total + total / 100 * 7;
+//            total = total + salary;
+//            System.out.println("Месяц " + i + " " + total);
         //task 5
         System.out.println("Task 5");
         int salary1 = 15000;
@@ -56,24 +69,12 @@ public class Main {
         }
         //task 6
         System.out.println("Task 6");
-//        double salary2 = 15000;
-//        double total2 = 0;
-//        double rate = 0.07;
-//        for (double b = 0; b < 9; b++) {
-//            total2 = total2 * rate + salry2;
-//            // total2 = total2 + total2 / 100 * 7;
-//            total2 = total2 + salary2;
-//            if (b % 0.5 == 0) {
-//                System.out.printf("");
-//            }
-        //       }
         double deposit1 = 15_000;
         double total2 = 0;
         int year1 = 9 * 12;
         double percent1 = 0.07;
         int x = 0;
         for (; x < year1; x++) {
-            // year1 = year1 * 12;
             total2 = total2 + deposit1;
             total2 = total2 + deposit1 * percent1;
             if (x % 6 == 0) {
@@ -89,14 +90,15 @@ public class Main {
         }
         //task 8
         System.out.println("Task 8");
-        int yearComet = 2024 - 200;
-        int year2Comet = 2024 + 100;
-        int year = yearComet;
-        for (; year < year2Comet; ) {
-            if (year % 79 == 0) {
-                System.out.println(year);
+        int endYear = 2124;
+        int step = 79;
+        int startYear = 1824;
+        int year = 0;
+        for (; year < endYear; year += step) {
+            if (year < startYear) {
+                continue;
             }
-            year++;
+            System.out.println(year);
         }
     }
 }
